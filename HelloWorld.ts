@@ -3,7 +3,7 @@
  * @returns the String hello
  */
 function hello (): String {
-    return "Hello World";
+    return "Hello World!";
 };
 
 export{hello}
