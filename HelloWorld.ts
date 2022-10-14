@@ -17,7 +17,7 @@ function grow() {
     if(document != null){
         let c = document.getElementById("growts").style.fontSize;
         let d = document.getElementById("growts").style.color;
-        if(c === 'black'){
+        if(d === 'black'){
             document.getElementById("growts").style.color = "pink";
             document.getElementById("growts").style.fontSize = "30px";
         }
