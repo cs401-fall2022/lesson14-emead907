@@ -3,6 +3,6 @@ import {hello} from '../HelloWorld';
 
 describe('sum module', () => {
   test('returns the string hello', () => {
-    expect(helloWorld()).toBe('Hello World!');
+    expect(hello()).toBe('Hello World!');
   });
 });
