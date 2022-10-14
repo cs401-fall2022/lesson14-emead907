@@ -20,4 +20,4 @@ function grow() {
         }
     }
 }
-export{hello}
+export{hello, grow}
