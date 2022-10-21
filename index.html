@@ -13,22 +13,135 @@
         <h2>Into to TypeScript</h2>
         <p>TypeScript is a strongly types scripting language. It adds additional features and syntax to JavaScript. TypeScript adds static typing to JavaScript which means that developers can add types when using TypeScript. TypeScript is a handy landuage to use when dealing with JavaScript and can help catch errors much earlier then JavaScript can. </p>
          </div>
+<div class="sections">
+    <h2> TypeScript vs JavaScript Example</h2>
+    <p>Like mentioned above TypeScript is JavaScript with added functions. Below are some code examples that show the difference between the two languages</p>
+    <h3>Hello World in TypeScript</h3>
+    <code><pre>
+let message: string = 'Hello, World!';
+console.log(message);
+    </pre></code>
+    <h3>Hello World in JavaScript</h3>
+    <code><pre>
+console.log('Hello World');
+    </pre></code>
 
+</div>
     <div class="sections">
         <h2>Defining Types</h2>
         <p>TypeScript supports an extension of the JavaScript language, which offers places for you to tell TypeScript what the types should be.</p>
-      </div>
+        <p>For example, to create an object with an inferred type which includes name: string and id: number, you can write:</p>
+        <code>
+        <pre>
+const person = {
+    name: 'Emily",
+    birth-month: 3,
+    birth-day: 12,
+};
+        </pre>
+        </code>
+        <p>You can explicitly describe this object’s shape using an interface declaration:</p>
+        <code><pre>
+interface Person {
+    name: string;
+    birth-month: number,
+    birth-day: number,
+}
+        </pre></code>
+        <p>You can then declare that a JavaScript object conforms to the shape of your new interface by using syntax like : TypeName after a variable declaration:</p>
+        <code><pre>
+const user: Person = {
+    name: "Emily",
+    birth-month: 3,
+    birth-day: 12,
+};
+        </pre></code>
+        <p>If you provide an object that doesn’t match the interface you have provided, TypeScript will warn you  </p>
+        <code><pre>
+interface Person {
+    name: string;
+    birth-month: number;
+    birth-day: number;
+}
+    
+const user: Person = {
+    username: "Emily",
+    Type '{ username: string; birth-month: number; birth-day: number; }' is not assignable to type 'Person'.
+    Object literal may only specify known properties, and 'username' does not exist in type 'Person'.
+    birth-month: 3,
+    birth-day: 12,
+};
+        </pre></code>
+    </div>
     <div class="sections">
         <h2>Generics</h2>
         <p>Generics provide variables to types. A common example is an array. An array without generics could contain anything. An array with generics can describe the values that the array contains..</p>
+        <code><pre>
+type StringArray = Array<string>;
+    type NumberArray = Array<number>;
+    type ObjectWithNameArray = Array<{ name: string }>;
+        </pre></code>
+        <p>You can declare your own types that use generics:</p>
+        <code><pre>
+interface Backpack<Type> {
+    add: (obj: Type) => void;
+    get: () => Type;
+}
+    
+    // This line is a shortcut to tell TypeScript there is a
+    // constant called `backpack`, and to not worry about where it came from.
+    declare const backpack: Backpack<string>;
+    
+    // object is a string, because we declared it above as the variable part of Backpack.
+    const object = backpack.get();
+    
+    // Since the backpack variable is a string, you can't pass a number to the add function.
+    backpack.add(23);
+    Argument of type 'number' is not assignable to parameter of type 'string'.
+    
+        </pre></code>
     </div>
     <div class="sections">
         <h2>Classes</h2>
         <p>TypeScript offers full support for the class keyword introduced in ES2015. As with other JavaScript language features, TypeScript adds type annotations and other syntax to allow you to express relationships between classes and other types.</p>
-    </div>
+    <p>Here’s the most basic class - an empty one:</p>
+    <code><pre>
+class Count {}
+    </pre></code>
+    <p>A field declaration creates a public writeable property on a class:</p>
+   <code><pre>
+class Count {
+    x: number;
+    y: number;
+    z: number;
+}
+    
+const num = new Count();
+num.x = 6;
+num.y = 2;
+num.z = num.x + num.y;
+   </pre></code>
+</div>
     <div class="sections">
         <h2>Compiling and Running</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Hendrerit dolor magna eget est lorem ipsum dolor sit amet. Fringilla est ullamcorper eget nulla facilisi. A scelerisque purus semper eget duis at tellus at urna. Aliquam etiam erat velit scelerisque in dictum non consectetur. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Sit amet cursus sit amet dictum sit amet justo donec. Vel risus commodo viverra maecenas accumsan lacus vel. Lacus vestibulum sed arcu non. Feugiat nisl pretium fusce id velit ut tortor pretium. Suspendisse interdum consectetur libero id. Netus et malesuada fames ac turpis egestas sed. Arcu odio ut sem nulla pharetra diam sit amet nisl.</p>
+        <p>There are a couple steps in running and compiling TypeScript code.</p>
+        <p>The frist is to install TypeScript. This can be done with the following command</p>
+        <code><pre>
+npm install -g typescript
+        </pre></code>
+        <p>You can test your install by checking the version or help.</p>
+    <code><pre>
+tsc --version
+tsc --help
+    </pre></code>
+    <p>Next we can build our Typescript file</p>
+    <code><pre>
+tsc FileName.ts
+    </pre></code>
+    <p>Or in some cases the following will work to build and compile your code</p>
+    <code><pre>
+npm run compile
+    </pre></code>
     </div>
 </head>
 

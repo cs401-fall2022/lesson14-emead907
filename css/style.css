@@ -1,4 +1,15 @@
 
+pre {
+  background-color: black;
+  display: block;
+  margin-left: 30px;
+  margin-right: 30px;
+  color: white;
+  border: 1px solid #999;
+  text-align: left;  
+  padding: 15px;
+  border-radius: 5px;
+}
 
  body {
    background-color: gray;
@@ -19,3 +30,4 @@
    margin: 5px;
    border-radius: 5px;
 }
+
