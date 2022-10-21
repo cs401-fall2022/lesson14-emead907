@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 6d1330e8b9e1bf94fe4dffea1de474a05f8d9442
 /**
  * This returns the string hello
  * @returns the String hello
